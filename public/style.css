@@ -1,0 +1,338 @@
+:root{
+  --pink: #ec008c;
+  --purple-a: #6a3fd1;
+  --purple-b: #9b3fbf;
+}
+body{
+  background:#f2f2f4;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ===== Top pink bar ===== */
+.topbar{
+  background: var(--pink);
+  color:#fff;
+}
+.topbar .brand-title{
+  font-weight:700;
+  font-size:1.15rem;
+  letter-spacing:.3px;
+}
+.topbar .nav-link{
+  color:#fff;
+  font-weight:500;
+  padding:.4rem .25rem;
+  margin-right:1.25rem;
+  border-bottom:3px solid transparent;
+}
+.topbar .nav-link.active{
+  color:#fff;
+  border-bottom-color:#fff;
+  font-weight:700;
+}
+.topbar .search-box{
+  border:none;
+  border-radius:6px;
+  padding:.4rem .75rem;
+  font-size:.9rem;
+  min-width:220px;
+}
+.topbar .date-label{
+  font-size:.8rem;
+  opacity:.9;
+}
+
+/* ===== Hero banner ===== */
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Footer ===== */
+.footer-logo{
+  background: #ffffff;
+  border-top: 1px solid #e3e3e6;
+  text-align:center;
+  padding: 2.5rem 0;
+}
+.footer-logo img{
+  height: 40px;
+  width: auto;
+  display: inline-block;
+}
+
+/* ===== Content cards (index.html) ===== */
+.content-wrap{
+  padding: 2rem 0;
+}
+.info-card, .time-card, .print-card, .splits-card{
+  background:#fff;
+  border:1px solid #d3d3d3;
+  border-radius:4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.info-card{
+  text-align: center;
+  overflow: hidden;
+}
+.info-card .name-row{
+  padding: 0.75rem 1rem;
+  font-weight:700;
+  font-size:1.35rem;
+  color: #222;
+}
+.info-card .bib-row{
+  background: var(--pink);
+  color:#fff;
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:600;
+  padding: .4rem 0;
+}
+.info-card .cat-date{
+  text-align:center;
+  padding: .75rem 0;
+  border-bottom:1px solid #d3d3d3;
+}
+.info-card .cat-date .distance{
+  font-weight:800;
+  font-size:1.15rem;
+}
+.info-card .cat-date .date{
+  color:#555;
+  font-size:.9rem;
+  font-weight: 500;
+}
+.info-card .details-list{
+  padding: .75rem 1rem;
+}
+.info-card .details-list .row-item{
+  margin-bottom: 0.4rem;
+  font-size:.92rem;
+}
+.info-card .details-list .row-item:last-child {
+  margin-bottom: 0;
+}
+.info-card .details-list .row-item .label{
+  color:#666;
+}
+.info-card .details-list .row-item .value{
+  font-weight:700;
+}
+.info-card .fav-link{
+  display:block;
+  text-align:center;
+  padding: .75rem 0;
+  color:#333;
+  font-size:.85rem;
+  font-weight: 600;
+  text-decoration:none;
+}
+.info-card .fav-link i{
+  color:#333;
+  margin-right: 4px;
+}
+
+.time-card{
+  padding: 1.25rem 1.5rem;
+}
+@media (max-width: 576px) {
+  .time-card {
+    flex-direction: column !important;
+    gap: 1.25rem;
+    text-align: center;
+  }
+  .time-card > div {
+    max-width: 100% !important;
+  }
+  .time-card div[style*="font-size: 2.6rem"] {
+    padding-right: 0 !important;
+  }
+}
+.print-card{
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  text-align:center;
+  font-weight:600;
+  color:#333;
+  cursor:pointer;
+  display: block;
+  text-decoration: none;
+}
+.print-card:hover{
+  background:#f9f9f9;
+  color:#333;
+}
+
+/* ===== Splits table (index.html) ===== */
+.splits-section {
+  padding-bottom: 2rem;
+}
+.splits-card h5{
+  text-align:center;
+  font-weight:700;
+  font-size: 1.35rem;
+  padding: 0.5rem 0 1rem;
+  margin:0;
+}
+.splits-table{
+  width:100%;
+  margin-bottom:0;
+}
+.splits-table thead tr{
+  background: var(--pink);
+  color:#fff;
+}
+.splits-table thead th{
+  font-weight:600;
+  font-size:.9rem;
+  padding: .75rem 1.5rem;
+  border:none;
+}
+.splits-table tbody td{
+  padding: 1rem 1.5rem;
+  vertical-align:middle;
+  border-bottom:1px solid #eee;
+}
+.splits-table tbody tr:last-child td{
+  border-bottom:none;
+}
+.splits-table .cp-name{
+  font-weight:700;
+}
+.splits-table .time-of-day{
+  color: #666;
+  font-size:.85rem;
+}
+.splits-table .time-elapsed{
+  color:#000;
+  font-weight: 600;
+}
+@media (max-width: 576px) {
+  .splits-card {
+    padding: 1rem;
+  }
+  .splits-table tbody td, .splits-table thead th {
+    padding: 0.75rem 0.5rem;
+  }
+  .splits-table .cp-name {
+    padding-left: 0.5rem !important;
+  }
+}
+
+/* ===== Details page (details.html) ===== */
+.details-wrap {
+  padding: 0 0 3rem;
+}
+
+/* Event tabs */
+.event-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+.event-tab {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.event-tab.active {
+  color: #0d6efd;
+  background: #fff;
+  border-color: #e3e3e6;
+  border-bottom-color: #fff;
+  border-radius: 4px 4px 0 0;
+}
+.event-tab:hover:not(.active) {
+  color: #0d6efd;
+}
+
+/* Stats card */
+.stats-card {
+  background: #fff;
+  border: 1px solid #e3e3e6;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.stats-card-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  padding: 0.9rem 1.5rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e3e3e6;
+}
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.stats-table thead th {
+  padding: 0.7rem 1.5rem;
+  font-weight: 700;
+  color: #000;
+  border-bottom: 1px solid #e3e3e6;
+  background: #fff;
+}
+.stats-table thead th:first-child {
+  text-align: left;
+}
+.stats-table thead th.cat-col {
+  text-align: left;
+}
+.stats-table tbody td {
+  padding: 0.7rem 1.5rem;
+  vertical-align: middle;
+}
+.stats-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+.stats-table tbody tr.no-border {
+  border-bottom: none;
+}
+.stats-table tbody tr:last-child {
+  border-bottom: none;
+}
+.stats-table .gender-cell {
+  color: #333;
+  font-weight: 500;
+  width: 10rem;
+}
+.stats-table .total-row {
+  background-color: #f9f9f9;
+}
+.stats-table .total-row td {
+  font-weight: 500;
+  color: #333;
+}
+.stats-table td.num-cell, 
+.stats-table td.time-cell, 
+.stats-table td.black-cell {
+  text-align: right;
+  color: #333;
+}
+.stats-table td.cat-name {
+  text-align: left;
+  color: #333;
+}
+@media (max-width: 576px) {
+  .stats-table thead th, .stats-table tbody td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.82rem;
+  }
+}
