@@ -29,10 +29,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-  console.log(`  Results : http://localhost:${PORT}/`);
-  console.log(`  Details : http://localhost:${PORT}/details`);
-  console.log(`  Runner  : http://localhost:${PORT}/app/1011`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`  Results : http://localhost:${PORT}/`);
+    console.log(`  Details : http://localhost:${PORT}/details`);
+    console.log(`  Runner  : http://localhost:${PORT}/app/1011`);
+  });
+}
+
+module.exports = app;
 
