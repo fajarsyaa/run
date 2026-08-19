@@ -50,7 +50,7 @@ function showDetailView(runnerId) {
   // Populate Print Link
   const printLink = document.getElementById("runner-cert-link");
   if (printLink) {
-    printLink.href = runner.certificatePdf || "/public/cert/cert.pdf";
+    printLink.href = runner.certificatePdf || "public/cert/cert.pdf";
   }
 
   // Populate Splits Table
@@ -224,8 +224,8 @@ function initApp() {
       if (e.key === "Enter") {
         const val = topSearchInput.value.trim();
         if (val) {
-          if (window.location.pathname.includes('/details')) {
-            window.location.href = `/?q=${encodeURIComponent(val)}`;
+          if (window.location.pathname.includes('details')) {
+            window.location.href = `index.html?q=${encodeURIComponent(val)}`;
           } else {
             window.location.hash = "";
             showSearchView(val);
