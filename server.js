@@ -3,11 +3,11 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static assets from root folder
-app.use(express.static(__dirname));
+// Serve static assets from /public folder
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Resolve relative assets inside /app/ path without modifying HTML
-app.use('/app', express.static(__dirname));
+// Serve participants.js from root
+app.use('/participants.js', express.static(path.join(__dirname, 'participants.js')));
 
 // Details page
 app.get('/details', (req, res) => {
@@ -21,6 +21,10 @@ app.get('/search', (req, res) => {
 
 // Serve index.html for clean BIB-based URL paths
 app.get(['/app/:id', '/:id'], (req, res) => {
+  const id = req.params.id;
+  if (id.includes('.') || id === 'public' || id === 'api') {
+    return res.status(404).send('Not found');
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
@@ -39,4 +43,3 @@ if (require.main === module) {
 }
 
 module.exports = app;
-
