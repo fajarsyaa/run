@@ -11,7 +11,7 @@ const participantsData = {
     "overallRank": "1/194",
     "categoryRank": "1/155",
     "genderRank": "1/175",
-    "certificatePdf": "cert.pdf",
+    "certificatePdf": "cert-1011.pdf",
     "splits": [
       { "name": "START", "time": "00:00:00", "timeOfDay": "(05:38:57)", "splitTime": "" },
       { "name": "CP1", "time": "00:30:04", "timeOfDay": "(06:09:01)", "splitTime": "00:30:04" },
@@ -30,7 +30,7 @@ const participantsData = {
     "overallRank": "62/194",
     "categoryRank": "47/155",
     "genderRank": "55/175",
-    "certificatePdf": "cert.pdf",
+    "certificatePdf": "cert-1221.pdf",
     "splits": [
       { "name": "START", "time": "00:00:00", "timeOfDay": "(05:38:57)", "splitTime": "" },
       { "name": "CP1", "time": "00:50:10", "timeOfDay": "(06:29:07)", "splitTime": "00:50:10" },
@@ -49,7 +49,7 @@ const participantsData = {
     "overallRank": "65/194",
     "categoryRank": "50/155",
     "genderRank": "58/175",
-    "certificatePdf": "cert.pdf",
+    "certificatePdf": "cert-1222.pdf",
     "splits": [
       { "name": "START", "time": "00:00:00", "timeOfDay": "(05:38:57)", "splitTime": "" },
       { "name": "CP1", "time": "00:51:10", "timeOfDay": "(06:30:07)", "splitTime": "00:51:10" },
