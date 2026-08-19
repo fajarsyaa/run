@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAJAPAHIT RUN 2026 - Details</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<style>
+  :root{
+    --pink: #ec008c;
+    --purple-a: #6a3fd1;
+    --purple-b: #9b3fbf;
+  }
+  body{
+    background:#f2f2f4;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+
+  /* ===== Top pink bar ===== */
+  .topbar{
+    background: var(--pink);
+    color:#fff;
+  }
+  .topbar .brand-title{
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:.3px;
+  }
+  .topbar .nav-link{
+    color:#fff;
+    font-weight:500;
+    padding:.4rem .25rem;
+    margin-right:1.25rem;
+    border-bottom:3px solid transparent;
+  }
+  .topbar .nav-link.active{
+    color:#fff;
+    border-bottom-color:#fff;
+    font-weight:700;
+  }
+  .topbar .search-box{
+    border:none;
+    border-radius:6px;
+    padding:.4rem .75rem;
+    font-size:.9rem;
+    min-width:220px;
+  }
+  .topbar .date-label{
+    font-size:.8rem;
+    opacity:.9;
+  }
+
+  /* ===== Hero banner ===== */
+  .hero{
+    position:relative;
+    overflow:hidden;
+  }
+  .hero img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ===== Footer ===== */
+  .footer-logo{
+    background: #ffffff;
+    border-top: 1px solid #e3e3e6;
+    text-align:center;
+    padding: 2.5rem 0;
+  }
+  .footer-logo img{
+    height: 40px;
+    width: auto;
+    display: inline-block;
+  }
+
+  /* ===== Details page ===== */
+  .details-wrap {
+    padding: 0 0 3rem;
+  }
+
+  /* Event tabs */
+  .event-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .event-tab {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .event-tab.active {
+    color: #0d6efd;
+    background: #fff;
+    border-color: #e3e3e6;
+    border-bottom-color: #fff;
+    border-radius: 4px 4px 0 0;
+  }
+  .event-tab:hover:not(.active) {
+    color: #0d6efd;
+  }
+
+  /* Stats card */
+  .stats-card {
+    background: #fff;
+    border: 1px solid #e3e3e6;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .stats-card-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    padding: 0.9rem 1.5rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e3e3e6;
+  }
+  .stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .stats-table thead th {
+    padding: 0.7rem 1.5rem;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 1px solid #e3e3e6;
+    background: #fff;
+  }
+  .stats-table thead th:first-child {
+    text-align: left;
+  }
+  .stats-table thead th.cat-col {
+    text-align: left;
+  }
+  .stats-table tbody td {
+    padding: 0.7rem 1.5rem;
+    vertical-align: middle;
+  }
+  .stats-table tbody tr {
+    border-bottom: 1px solid #eee;
+  }
+  .stats-table tbody tr.no-border {
+    border-bottom: none;
+  }
+  .stats-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .stats-table .gender-cell {
+    color: #333;
+    font-weight: 500;
+    width: 10rem;
+  }
+  .stats-table .total-row {
+    background-color: #f9f9f9;
+  }
+  .stats-table .total-row td {
+    font-weight: 500;
+    color: #333;
+  }
+  .stats-table td.num-cell, 
+  .stats-table td.time-cell, 
+  .stats-table td.black-cell {
+    text-align: right;
+    color: #333;
+  }
+  .stats-table td.cat-name {
+    text-align: left;
+    color: #333;
+  }
+  @media (max-width: 576px) {
+    .stats-table thead th, .stats-table tbody td {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.82rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== TOP NAV BAR ===== -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center py-2 flex-wrap">
+      <div class="d-flex align-items-center flex-wrap">
+        <span class="brand-title me-4">MAJAPAHIT RUN 2026</span>
+      </div>
+      <span class="date-label">07/05/2026</span>
+    </div>
+    <div class="container d-flex justify-content-between align-items-center pb-2 flex-wrap">
+      <nav class="d-flex">
+        <a href="/" class="nav-link">Results</a>
+        <a href="/details" class="nav-link active">Details</a>
+      </nav>
+      <input type="text" id="top-search-input" class="search-box" placeholder="Search">
+    </div>
+  </div>
+
+  <!-- ===== HERO BANNER ===== -->
+  <div class="hero">
+    <img src="/BANNER.png" alt="Majapahit Run 2026 Banner">
+  </div>
+
+  <!-- ===== DETAILS CONTENT ===== -->
+  <div class="details-wrap">
+    <div class="container">
+
+      <!-- Event Tabs -->
+      <div class="event-tabs">
+        <a href="#" class="event-tab active" data-event="10k">10K</a>
+        <a href="#" class="event-tab" data-event="5k">5K</a>
+        <a href="#" class="event-tab" data-event="kidsh">KIDSH DASH</a>
+      </div>
+
+      <!-- 10K Data -->
+      <div id="event-10k" class="event-panel">
+        <!-- Event Totals -->
+        <div class="stats-card">
+          <div class="stats-card-header">Event Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th class="num-cell" style="text-align:right;">Entered</th>
+                  <th class="num-cell" style="text-align:right;">Finishers</th>
+                  <th class="num-cell" style="text-align:right;">Fastest Time</th>
+                  <th class="num-cell" style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="gender-cell">Female</td>
+                  <td class="num-cell">24</td>
+                  <td class="num-cell">19</td>
+                  <td class="time-cell">00:44:55</td>
+                  <td class="black-cell">01:10:17</td>
+                </tr>
+                <tr>
+                  <td class="gender-cell">Male</td>
+                  <td class="num-cell">286</td>
+                  <td class="num-cell">175</td>
+                  <td class="time-cell">00:35:44</td>
+                  <td class="black-cell">01:04:34</td>
+                </tr>
+                <tr class="total-row">
+                  <td class="gender-cell">Total</td>
+                  <td class="num-cell">310</td>
+                  <td class="num-cell">194</td>
+                  <td class="time-cell">00:35:44</td>
+                  <td class="black-cell">01:05:07</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Category Totals -->
+        <div class="stats-card">
+          <div class="stats-card-header">Category Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th class="cat-col">Category</th>
+                  <th class="num-cell" style="text-align:right;">Entered</th>
+                  <th class="num-cell" style="text-align:right;">Finishers</th>
+                  <th class="num-cell" style="text-align:right;">Fastest Time</th>
+                  <th class="num-cell" style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="no-border">
+                  <td class="gender-cell" rowspan="2">Female</td>
+                  <td class="cat-name">MASTER</td>
+                  <td class="num-cell">10</td>
+                  <td class="num-cell">9</td>
+                  <td class="time-cell">00:49:27</td>
+                  <td class="black-cell">01:14:10</td>
+                </tr>
+                <tr>
+                  <td class="cat-name">UMUM</td>
+                  <td class="num-cell">14</td>
+                  <td class="num-cell">10</td>
+                  <td class="time-cell">00:44:55</td>
+                  <td class="black-cell">01:06:47</td>
+                </tr>
+                <tr class="no-border">
+                  <td class="gender-cell" rowspan="2">Male</td>
+                  <td class="cat-name">MASTER</td>
+                  <td class="num-cell">26</td>
+                  <td class="num-cell">20</td>
+                  <td class="time-cell">00:40:40</td>
+                  <td class="black-cell">01:00:47</td>
+                </tr>
+                <tr>
+                  <td class="cat-name">UMUM</td>
+                  <td class="num-cell">260</td>
+                  <td class="num-cell">155</td>
+                  <td class="time-cell">00:35:44</td>
+                  <td class="black-cell">01:05:03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5K Data -->
+      <div id="event-5k" class="event-panel" style="display:none;">
+        <div class="stats-card">
+          <div class="stats-card-header">Event Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th style="text-align:right;">Entered</th>
+                  <th style="text-align:right;">Finishers</th>
+                  <th style="text-align:right;">Fastest Time</th>
+                  <th style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="gender-cell">Female</td>
+                  <td class="num-cell">251</td>
+                  <td class="num-cell">225</td>
+                  <td class="time-cell">00:23:08</td>
+                  <td class="black-cell">00:51:30</td>
+                </tr>
+                <tr>
+                  <td class="gender-cell">Male</td>
+                  <td class="num-cell">496</td>
+                  <td class="num-cell">375</td>
+                  <td class="time-cell">00:18:08</td>
+                  <td class="black-cell">00:42:21</td>
+                </tr>
+                <tr class="total-row">
+                  <td class="gender-cell">Total</td>
+                  <td class="num-cell">747</td>
+                  <td class="num-cell">600</td>
+                  <td class="time-cell">00:18:08</td>
+                  <td class="black-cell">00:45:47</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="stats-card">
+          <div class="stats-card-header">Category Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th class="cat-col">Category</th>
+                  <th style="text-align:right;">Entered</th>
+                  <th style="text-align:right;">Finishers</th>
+                  <th style="text-align:right;">Fastest Time</th>
+                  <th style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="no-border">
+                  <td class="gender-cell" rowspan="2">Female</td>
+                  <td class="cat-name">PELAJAR</td>
+                  <td class="num-cell">50</td>
+                  <td class="num-cell">47</td>
+                  <td class="time-cell">00:25:25</td>
+                  <td class="black-cell">00:49:51</td>
+                </tr>
+                <tr>
+                  <td class="cat-name">UMUM</td>
+                  <td class="num-cell">201</td>
+                  <td class="num-cell">178</td>
+                  <td class="time-cell">00:23:08</td>
+                  <td class="black-cell">00:51:56</td>
+                </tr>
+                <tr class="no-border">
+                  <td class="gender-cell" rowspan="2">Male</td>
+                  <td class="cat-name">PELAJAR</td>
+                  <td class="num-cell">120</td>
+                  <td class="num-cell">99</td>
+                  <td class="time-cell">00:18:08</td>
+                  <td class="black-cell">00:36:54</td>
+                </tr>
+                <tr>
+                  <td class="cat-name">UMUM</td>
+                  <td class="num-cell">376</td>
+                  <td class="num-cell">276</td>
+                  <td class="time-cell">00:18:32</td>
+                  <td class="black-cell">00:44:18</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- KIDSH DASH Data -->
+      <div id="event-kidsh" class="event-panel" style="display:none;">
+        <div class="stats-card">
+          <div class="stats-card-header">Event Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th style="text-align:right;">Entered</th>
+                  <th style="text-align:right;">Finishers</th>
+                  <th style="text-align:right;">Fastest Time</th>
+                  <th style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="gender-cell">Female</td>
+                  <td class="num-cell">59</td>
+                  <td class="num-cell"></td>
+                  <td class="time-cell"></td>
+                  <td class="black-cell"></td>
+                </tr>
+                <tr>
+                  <td class="gender-cell">Male</td>
+                  <td class="num-cell">105</td>
+                  <td class="num-cell"></td>
+                  <td class="time-cell"></td>
+                  <td class="black-cell"></td>
+                </tr>
+                <tr class="total-row">
+                  <td class="gender-cell">Total</td>
+                  <td class="num-cell">164</td>
+                  <td class="num-cell"></td>
+                  <td class="time-cell"></td>
+                  <td class="black-cell"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="stats-card">
+          <div class="stats-card-header">Category Totals</div>
+          <div class="table-responsive">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th class="cat-col">Category</th>
+                  <th style="text-align:right;">Entered</th>
+                  <th style="text-align:right;">Finishers</th>
+                  <th style="text-align:right;">Fastest Time</th>
+                  <th style="text-align:right;">Avg Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="gender-cell">Female</td>
+                  <td class="cat-name">Unknown</td>
+                  <td class="num-cell">59</td>
+                  <td class="num-cell"></td>
+                  <td class="time-cell"></td>
+                  <td class="black-cell"></td>
+                </tr>
+                <tr>
+                  <td class="gender-cell">Male</td>
+                  <td class="cat-name">Unknown</td>
+                  <td class="num-cell">105</td>
+                  <td class="num-cell"></td>
+                  <td class="time-cell"></td>
+                  <td class="black-cell"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer-logo">
+    <img src="/footer.png" alt="PickMyRace">
+  </div>
+
+  <script>
+    // Event tab switching
+    const tabs = document.querySelectorAll('.event-tab');
+    const panels = document.querySelectorAll('.event-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.dataset.event;
+        panels.forEach(panel => {
+          panel.style.display = panel.id === `event-${target}` ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Top search bar — navigate to results page with search
+    const topSearch = document.getElementById('top-search-input');
+    if (topSearch) {
+      topSearch.addEventListener('keypress', e => {
+        if (e.key === 'Enter') {
+          const val = topSearch.value.trim();
+          if (val) window.location.href = `/?q=${encodeURIComponent(val)}`;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
