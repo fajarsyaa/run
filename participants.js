@@ -18,8 +18,27 @@ const participantsData = {
       { "name": "Finish", "time": "00:35:44", "timeOfDay": "(06:14:41)", "splitTime": "00:05:39" }
     ]
   },
+  "1013": {
+  "name": "MUHAMMAD KAFABY",
+  "bib": "1013",
+  "distance": "10K",
+  "date": "5 July 2026",
+  "gender": "Male",
+  "category": "UMUM",
+  "status": "Finished",
+  "finishTime": "00:56:02",
+  "overallRank": "58/194",
+  "categoryRank": "43/155",
+  "genderRank": "51/175",
+  "certificatePdf": "/public/cert/cert-1013.pdf",
+  "splits": [
+    { "name": "START", "time": "00:00:00", "timeOfDay": "(05:38:57)", "splitTime": "" },
+    { "name": "CP1", "time": "00:48:20", "timeOfDay": "(06:27:17)", "splitTime": "00:48:20" },
+    { "name": "Finish", "time": "00:56:02", "timeOfDay": "(06:34:59)", "splitTime": "00:07:42" }
+  ]
+},
   "1221": {
-    "name": "MUHAMMAD FAJAR SYAIHU WALID",
+    "name": "MUKHAMAD FAJAR SYAIHU WALID",
     "bib": "1221",
     "distance": "10K",
     "date": "5 July 2026",
